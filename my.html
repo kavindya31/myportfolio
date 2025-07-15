@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amal Perera | Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@700;800&display=swap" rel="stylesheet">
+<style>
+
+  @media (max-width: 768px) {
+    .d-flex {
+      flex-direction: column !important;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .form-control,
+    .btn {
+      width: 90% !important;
+    }
+
+    .hero-section {
+      padding: 20px !important;
+    }
+
+    .hero-title {
+      font-size: 1.5rem;
+    }
+
+    .hero-subtitle,
+    .lead {
+      font-size: 1rem;
+    }
+
+ 
+
+    .btn {
+      margin: 5px;
+    }
+  }
+
+.grow-hover {
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.grow-hover:hover {
+  transform: scale(1.2); 
+}
+
+.skill-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.6); 
+}
+
+.skill-card {
+  position: relative;
+  background: linear-gradient(45deg, #C471ED, #FFD700);
+  color: white;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: scale(1.03);
+}
+
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-25deg);
+}
+
+.skill-card:hover::before {
+  animation: shine 0.8s ease forwards;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+.social-icon i {
+  color: #222;
+  transition: 0.3s ease;
+}
+
+.social-icon i:hover {
+  color: #FFD700; 
+  text-shadow: 0 0 8px #FFD700, 0 0 15px #FFD700;
+  transform: scale(1.1); 
+}
+
+.contact-circle {
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-circle:hover {
+  box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.7); 
+}
+
+
+.contact-circle:hover .contact-icon {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+  color: #FFD700; 
+  filter: drop-shadow(0 0 6px #FFD700) drop-shadow(0 0 10px #FFD700);
+}
+
+
+  .nav-link {
+    position: relative;
+    color: white !important;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #a0c22f !important; 
+    text-shadow: 0 0 5px #a0c22f, 0 0 10px #a0c22f; 
+    transform: scale(1.05); 
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #a0c22f;
+    transition: width 0.3s;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 992px) {
+    #about .img-fluid {
+      max-width: 200px;
+      height: 220px;
+    }
+
+    #about h3, #about p {
+      text-align: center;
+    }
+
+    #about .badge {
+      display: block;
+      margin: 0 auto 15px auto;
+    }
+
+    #about .col-md-6 {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #about .container {
+      width: 100% !important;
+      padding-top:  320px;
+    }
+
+    #about .img-fluid {
+      max-width: 150px;
+      height: 150px;
+    }
+
+    #about h2.text-center {
+      font-size: 24px;
+    }
+
+    #about p {
+      font-size: 14px;
+    }
+
+    #about .p-3 {
+      padding: 10px !important;
+    }
+  }
+
+  @media (max-width: 576px) {
+    #about .img-fluid {
+      max-width: 150px;
+      height: 100px;
+    }
+
+    #about h4 {
+      font-size: 16px;
+    }
+
+    #about .row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #about .col-md-8, 
+    #about .col-md-4 {
+      width: 100%;
+    }
+  }
+
+@media (max-width: 992px) {
+  #skills .container {
+    width: 100% !important;
+    padding: 0 20px;
+  }
+
+  .skill-card {
+    margin-bottom: 30px;
+  }
+
+  .progress-bar {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  .bg-secondary {
+    font-size: 14px;
+  }
+
+  .bg-secondary h6 {
+    font-size: 15px;
+  }
+
+  .bg-secondary p {
+    font-size: 12px;
+  }
+
+  #skills h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .progress-bar {
+    font-size: 10px;
+    padding: 3px;
+  }
+
+  #skills h3 {
+    font-size: 20px;
+  }
+
+  .skill-card {
+    padding: 15px !important;
+  }
+
+  .bg-secondary i {
+    font-size: 20px;
+  }
+
+  .bg-secondary {
+    padding: 10px;
+  }
+
+  .bg-secondary h6 {
+    font-size: 13px;
+  }
+
+  .bg-secondary p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 992px) {
+  #education .row {
+    flex-direction: column;
+  }
+
+  #education h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  #education .timeline h4,
+  #education .achievement-list h5 {
+    font-size: 16px;
+  }
+
+  #education .timeline-date {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  #education .col-lg-6 {
+    margin-bottom: 30px;
+    padding: 15px;
+  }
+
+  #education .timeline,
+  #education .achievement-list {
+    padding-left: 0;
+  }
+
+  #education i.fa-2x {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  #education p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  
+  #education h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  #education .col-lg-6 {
+    
+   
+    margin-bottom: 30px;
+  }
+
+  #education h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #education .timeline-item h4,
+  #education .achievement-list h5 {
+    font-size: 15px;
+  }
+
+  #education .timeline-date {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  #education .timeline-item p,
+  #education .achievement-list p {
+    font-size: 13px;
+  }
+
+  #education i.fa-2x {
+    font-size: 20px;
+    margin-right: 8px;
+  }
+
+  .achievement-list .d-flex {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .achievement-list .flex-shrink-0 {
+    margin-right: 10px;
+  }
+
+  .achievement-list .flex-grow-1 {
+    flex: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  #contact .container {
+    width: 100% !important;
+    padding: 15px;
+  }
+
+  #contact .text-center {
+    font-size: 22px;
+  }
+
+
+  #contact > div[style*="grid-template-columns"] {
+    display: block !important;
+  }
+
+  #contact .contact-circle {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  #contact .contact-icon {
+    font-size: 16px !important;
+  }
+
+  #contact .contact-info h5 {
+    font-size: 15px;
+  }
+
+  #contact .contact-info p {
+    font-size: 13px;
+  }
+
+  #contact form {
+    padding: 0 !important;
+  }
+
+  #contact div[style*="width: 800px"] {
+    width: 100% !important;
+    padding: 15px;
+    margin-top: 30px;
+  }
+
+  #contact .social-icon i {
+    font-size: 20px !important;
+  }
+}
+#about {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#about:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transform: scale(1.01);
+}
+#education {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#education:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transform: scale(1.01);}
+
+  .education-box {
+  background: linear-gradient(135deg, #d558dc, #5983ca, #04034e);
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.education-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+
+.project-btn:hover {
+  background-color: rgb(236, 54, 203);
+  color: white;
+}
+
+
+#projects {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#projects:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transform: scale(1.01);
+}
+
+#contact {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#contact:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transform: scale(1.01);
+}
+.contact-form-containe {
+  background: linear-gradient(135deg, #58aedc, #5983ca, #04034e);
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 183, 255, 0.5);
+}
+ 
+.project-card {
+  background: linear-gradient(135deg, #d558dc, #5983ca, #04034e);
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+.lang-hover {
+  transition: background-color 0.3s ease;
+}
+
+.lang-hover:hover {
+  background-color: #63dc65 !important; 
+}
+.custom-ol li::marker {
+  color: black;
+  font-weight: bold;
+}
+
+</style>
+<script>
+  function setSearchValue(value) {
+    document.getElementById('searchInput').value = value;
+  }
+
+  
+</script>
+
+
+
+</head>
+<body >
+  <nav style="height:70px; align-items: center;
+  background: linear-gradient(135deg, #678384, #435066, #605f8c);
+  color: white;" class="navbar navbar-expand-lg bg-body-tertiary" style="width: 100%;"id="home">
+  <div class="container-fluid">
+ 
+    <a style="color:white;margin-left: 20px;"class="navbar-brand" href="#">Kavindya Sathsarani</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  
+     <br><br>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03" style="text-align: center;">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="gap: 20px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home">Home</a>
+        </li>
+        <li  class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skill</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Project</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+
+<form class="d-flex align-items-center" role="search">
+  
+  <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 150px;">
+
+  
+  <div class="dropdown">
+    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="searchDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false">
+      Search
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="searchDropdown">
+      <li><a class="dropdown-item" href="#html/css" onclick="setSearchValue('HTML')">HTML</a></li>
+      <li><a class="dropdown-item" href="#java" onclick="setSearchValue('Java')">Java</a></li>
+      <li><a class="dropdown-item" href="#c++" onclick="setSearchValue('C++')">C++</a></li>
+      <li><a class="dropdown-item" href="#javascript" onclick="setSearchValue('JavaScript')">JavaScript</a></li>
+      <li><a class="dropdown-item" href="#php" onclick="setSearchValue('PHP')">PHP</a></li>
+    </ul>
+  </div>
+</form>
+
+
+    </div>
+  </div>
+</nav>
+
+
+<section style="height: 500px; color:white;background: linear-gradient(45deg, #37392f, #221f1f);" style="width: 1841px;height: 400px; text-align: center;margin-top: 20px;padding: 40px;"class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 style="margin-top: 100px;" class="hero-title">Hi, I'm <span>Kavindya Sathsarani</span></h1>
+                    <p class="hero-subtitle">Software Engineering Undergraduate & Web Developer</p>
+                    <p class="lead">Passionate about creating innovative solutions through code. Currently pursuing my Bachelor's degree at University of Sri Jayewardenepura.</p>
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    
+                    <a href="cv (2).pdf" class="btn btn-secondary" download>Download CV</a>
+
+                </div>
+               <div class="col-md-6 order-md-2 order-1 mb-4 mb-md-0">
+                     
+                        <div class="profile-img">
+                       
+                          <img class="rounded mx-auto d-block grow-hover" style="margin-top:90px;width: 300px; height:350px;border-radius: 100%;background: linear-gradient(45deg, #a0c22f, #c57b7d);;"src="mypro.png">
+                        </div>
+                    
+            </div>
+        </div>
+    </section>
+  <section  style="background: linear-gradient(45deg, #37392f, #221f1f);"id="about">
+        <div style="width: 1300px; 
+  background: linear-gradient(45deg, #a0c22f, #c57b7d);
+  color: white;" class="container">
+            <h2 class="text-center text-black mb-5">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-bg">
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-4 mb-md-0">
+                                <img src="pro.jpeg" alt="About Image" class="img-fluid rounded-circle mb-3 grow-hover" style="max-width: 300px;height: 300px;">
+                                <br>
+                                <br>
+                                <h4 style="color:#000;">Sathsarani K.G.A.K</h4>
+                                <p style="color:#000;"class="text-muted">SE Undergraduate</p>
+                            </div>
+                            <div class="col-md-8">
+                                <h3 class="mb-3">Hello!</h3>
+                                <p>I'm a 2<sup>nd</sup> year Computer Science undergraduate at the University of Sri Jayewardenepura, passionate about web technologies and software development. With a strong foundation in computer science principles, I strive to create innovative solutions to real-world problems.</p>
+                                <p>My academic journey has equipped me with a diverse skill set including front-end and back-end development, database management, and algorithm design. I'm particularly interested in the intersection of AI and web technologies.</p>
+                                <p>When I'm not coding, you can find me participating in hackathons, contributing to open-source projects, or exploring new technologies in the ever-evolving field of computing.</p>
+                                <div class="mt-4">
+                                    <h2 class="badge text-bg-secondary text-wrap">Personal Details</h2>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="p-3 mb-2 bg-info-subtle text-info-emphasis lang-hover"><strong class="fw-bolder">Age:</strong> 22 years</p>
+                                            <p class="p-3 mb-2 bg-info-subtle text-info-emphasis lang-hover" class="fw-bolder"><strong class="fw-bolder">Email:</strong> sathsaranikavindya103@gmail.com</p>
+                                           
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="p-3 mb-2 bg-info-subtle text-info-emphasis lang-hover"><strong>Location:</strong> Colombo, Sri Lanka</p>
+                                            <p class="p-3 mb-2 bg-info-subtle text-info-emphasis lang-hover"><strong>Languages:</strong> Sinhala, English</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            
+      
+    </section>
+
+    <section style="background: linear-gradient(45deg, #37392f, #221f1f);"id="skills" class="bg-light py-5">
+
+  <div style="width: 1300px; 
+  color: white;" class="container"id="skills">
+   <h2 class="text-center text-white mb-5">Skills & Expertise</h2>
+
+    <div class="row">
+     
+      <div class="col-md-6">
+<div class="skill-card p-4 h-100" style="background: linear-gradient(45deg, #a741db, #98b2e0); color: rgb(246, 244, 246);" class="p-4 rounded h-100">
+
+          <h3 class="mb-4">Technical Skills</h3>
+<br>
+          <section id="html/css">
+          <div class="mb-3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="30" alt="HTML">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="30" alt="CSS">
+            <div class="progress mt-2"id="html/css">
+              <div class="progress-bar bg-success" style="width: 95%;">HTML/CSS &#45; 95%</div>
+            </div>
+          </div>
+</section>
+<br>
+    <!--js-->
+           <section id="javascript">
+          <div class="mb-3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="30" alt="JS">
+            <div class="progress mt-2"id="javascript">
+              <div class="progress-bar bg-info" style="width: 90%;">JavaScript &#45; 90%</div>
+            </div>
+          </div>
+          </section>
+<br>
+          <!-- C++ -->
+           <section id="c++">
+          <div class="mb-3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="30" alt="C++">
+            <div class="progress mt-2"id="c++">
+              <div class="progress-bar bg-warning" style="width: 85%;">C++ &#45; 85%</div>
+            </div>
+          </div>
+</section>
+<br>
+          <!-- Java -->
+           <section id="java">
+          <div class="mb-3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="30" alt="Java">
+            <div class="progress mt-2"id="java">
+              <div class="progress-bar bg-danger" style="width: 80%;">Java &#45; 80%
+</div>
+            </div>
+          </div>
+          </section>
+<br>
+          <!-- PHP -->
+           <section id="php">
+          <div class="mb-3">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="30" alt="PHP">
+            <div class="progress mt-2 glow-hover"id="php">
+              <div class="progress-bar bg-primary" style="width: 85%;">PHP &#45; 85%</div>
+            </div>
+           
+          </div>
+           </section>
+        </div>
+      </div>
+
+    
+      <div class="col-md-6">
+        <div class="skill-card p-4 h-100" style="background: linear-gradient(45deg, #794da8, #c57b7d); color: white;" class="p-4 rounded h-100">
+
+
+          <h3 class="mb-4">Professional Skills</h3>
+
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="bg-secondary text-center p-3 rounded h-100">
+                <i class="fas fa-code fa-2x mb-2"></i>
+                <h6 class="mb-0">Web Development</h6>
+               <p class="mb-0 small">Building responsive and interactive websites using modern technologies</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="bg-secondary text-center p-3 rounded h-100">
+                <i class="fas fa-database fa-2x mb-2"></i>
+                <h6 class="mb-0">Database Design</h6>
+               <p class="mb-0 small">Designing efficient database structures and writing optimized queries</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="bg-secondary text-center p-3 rounded h-100">
+                <i class="fas fa-mobile-alt fa-2x mb-2"></i>
+                <h6 class="mb-0">Responsive Design</h6>
+               <p class="mb-0 small">Creating websites that work seamlessly across all device sizes</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="bg-secondary text-center p-3 rounded h-100">
+                <i class="fas fa-server fa-2x mb-2"></i>
+                <h6 class="mb-0">Frontend Dev</h6>
+                <p class="mb-0 small">Building robust client-side interfaces using modern tools</p>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="bg-secondary text-center p-3 rounded h-100">
+                <i class="fas fa-paint-brush fa-2x mb-2"></i>
+                <h6 class="mb-0">Graphic Design</h6>
+                <p class="mb-0 small">Skilled in graphic design with a strong focus on Adobe Illustrator. I create clean, modern, and visually appealing design</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <section style="background: linear-gradient(45deg, #37392f, #221f1f);" id="education">
+        <div style=" 
+  background: linear-gradient(135deg, #7446b5, #84c1b9, #b36fb8);
+  color: white;" class="container px-3">
+            <h2 class="text-center text-black mb-5">Education & Achievements</h2>
+            <div class="section-bg">
+                <div class="row">
+                    <div style=" background: linear-gradient(135deg, #d558dc, #5983ca, #04034e);" class="education-box col-lg-6 mb-5 mb-lg-0 ">
+                        <h3 style="color:black;" class="mb-4">Education</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                              <ol class="custom-ol">
+  <li>
+    <div class="timeline-date">2021 - Present</div>
+    <h5>Bachelor of Software Engineering Honours in Software Engineering</h5>
+    <p>University of Sri Jayewardenepura</p>
+    <p>Current GPA: 3.00/4.00</p>
+  </li>
+  <li>
+    <div class="timeline-date">2018 - 2020</div>
+    <h5>G.C.E. Advanced Level</h5>
+    <p>Weeraketiya Central College, Hambanthota</p>
+    <p>Physical Science Stream: 3A's</p>
+  </li>
+  <li>
+    <div class="timeline-date">2013 - 2017</div>
+    <h5>G.C.E. Ordinary Level</h5>
+    <p>Dharmapala College, Hambanthota</p>
+    <p>8A's and 1C including Mathematics, Science, English</p>
+  </li>
+</ol>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div style=" background: linear-gradient(135deg, #d558dc, #5983ca, #04034e) ;"class="education-box col-lg-6 ">
+                        <h3 style="color:black;" class="mb-4">Achievements</h3>
+                        <div class="achievement-list">
+                           
+                                
+                                
+                            <div class="d-flex mb-4">
+                                <div class="flex-shrink-0">
+                                    <i style="color: black;" class="fas fa-certificate fa-2x text-gradient me-3"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5>Certificate in Adobe Illustrator or Graphic Designs</h5>
+                                    <p class="mb-0">Adobe Illustrator training course via online-2024> </p>
+                                </div>
+                            </div>
+                          </div>
+                            <br>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i style="color: black;"class="fas fa-book fa-2x text-gradient me-3"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6>Successfully contributed as a Frontend Developer and Tester in a team project to design a responsive and user-friendly 
+                                      website using HTML, CSS, and Bootstrap.</h6>
+                                    <p class="mb-0"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <section style="background: linear-gradient(45deg, #37392f, #221f1f);" id="projects" class="bg-dark-light">
+        <div  class="container">
+            <h2 style="padding-top: 10px;"class="text-center text-white mb-5">Projects</h2>
+            <div class="row g-4">
+               
+                <div class="col-md-6 col-lg-4">
+                    <div style=" 
+  background: linear-gradient(135deg, #034243, #5983ca, #020117);"class="project-card">
+                        <img class="img-fluid rounded-circle mb-3 grow-hover"  style="width: 300px;height: 300px; margin-top: 8px;margin-left: 30px;" src="team.jpg">
+                        <div class="project-content">
+                            <h3 class="project-title">System for find Internship</h3>
+                            <p style="color:white;">A web-based platform that connects students with internship opportunities. The system allows users to search, filter, 
+                              and apply for internships based on skills, 
+                              location, and interests, while companies can post and manage internship listings.
+
+</p>
+                            <div style="color:white;" class="mb-3">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">react.js</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                            </div>
+                            <button> <a href="Web Project Proposal.pdf" target="_blank" class="btn btn-sm btn-outline-light project-btn" style="color:black;">View Project</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div style=" 
+  background: linear-gradient(135deg, #d558dc, #5983ca, #04034e);" class="project-card">
+                        <img class="img-fluid rounded-circle mb-3 grow-hover" style="width: 300px;height: 300px  ;margin-top:8px;margin-left: 30px;"src="lap.jpeg">
+                        <div class="project-content">
+                            <h3 class="project-title">Laptops selling System</h3>
+                            <p style="color:white;">This project aims to build a smart e-commerce platform for selling laptops using modern technologies The system provides 
+                              
+                        personalized laptop recommendations using AI models, manages product inventory, and visualizes data analytics for better business
+                         decisions. It targets both customers and admins.</p>
+                            <div style="color:white;" class="mb-3">
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">node.js</span>
+                                <span class="tech-badge">Chart.js</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                            
+                           <button> <a href="Proposal%20draft.pdf" target="_blank" class="btn btn-sm btn-outline-light project-btn" style="color:black;">View Project</a></button>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-md-6 col-lg-4">
+                    <div  style=" 
+  background: linear-gradient(135deg, #11c8cb, #5983ca, #605f8c);"class="project-card">
+                        <img class="img-fluid rounded-circle mb-3 grow-hover" style="width: 300px;height: 300px; margin-top: 8px;margin-left: 30px;" src="learn.png" alt="Project 1" class="project-img">
+                        <div class="project-content">
+                            <h3 class="project-title">E-Learning Platform</h3>
+                            <p style="color:white;">A comprehensive online learning platform with course management, video lessons, quizzes, and progress tracking.</p>
+                            <div style="color:white;" class="mb-3">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">Express</span>
+                            </div>
+                           <button> <a href="#" target="_blank" class="btn btn-sm btn-outline-light project-btn" style="color:black;">View Project</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+  <section style="background: linear-gradient(45deg, #37392f, #221f1f);"
+ 
+
+ id="contact" class="contact-section text-white py-5">
+
+  <div style="  background: linear-gradient(135deg, #6a11cb, #2575fc, #00b7ff);
+  color: white;" class="container px-3">
+    <h2 class="text-center text-black mb-5">Contact Me</h2>
+
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;margin-left: 40px;">
+      
+    
+      <div>
+        <div class="d-flex align-items-start mb-4">
+    <a href="tel:+94741208365" class="text-decoration-none text-dark d-flex align-items-start">
+      <div class="contact-circle d-flex justify-content-center align-items-center bg-primary text-white rounded-circle" style="width: 50px; height: 50px;">
+        <i class="fas fa-phone  contact-icon " style="font-size: 20px;"></i>
+      </div>
+      <div class="contact-info ms-4">
+        <h5>Phone</h5>
+        <p>+94 741 208 365</p>
+      </div>
+    </a>
+  </div>
+
+          <div class="d-flex align-items-start mb-4">
+    <a href="mailto:sathsaranikavindya103@gmail.com" class="text-decoration-none text-dark d-flex align-items-start">
+      <div class="contact-circle d-flex justify-content-center align-items-center bg-success text-white rounded-circle" style="width: 50px; height: 50px;">
+        <i class="fas fa-envelope" style="font-size: 20px;"></i>
+      </div>
+      <div class="contact-info ms-4">
+        <h5>Email</h5>
+        <p>sathsaranikavindya103@gmail.com</p>
+      </div>
+    </a>
+  </div>
+
+
+   <div class="d-flex align-items-start mb-4">
+  <a href="https://github.com/kavindya31" target="_blank" class="text-decoration-none text-dark d-flex align-items-start">
+    <div class="contact-circle d-flex justify-content-center align-items-center bg-dark text-white rounded-circle" style="width: 50px; height: 50px;">
+      <i class="fab fa-github" style="font-size: 20px;"></i>
+    </div>
+    <div class="contact-info ms-4">
+      <h5>GitHub</h5>
+      <p>github.com/kavindya31</p>
+    </div>
+  </a>
+</div>
+
+
+        <div class="d-flex align-items-start mb-4">
+    <a href="https://www.google.com/maps/place/Colombo,+Sri+Lanka" target="_blank" class="text-decoration-none text-dark d-flex align-items-start">
+      <div class="contact-circle d-flex justify-content-center align-items-center bg-danger text-white rounded-circle" style="width: 50px; height: 50px;">
+        <i  class="fas fa-map-marker-alt" style="font-size: 20px;"></i>
+      </div>
+      <div class="contact-info ms-4">
+        <h5>Location</h5>
+        <p>Colombo, Sri Lanka</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+     
+      <div style="background: linear-gradient(135deg, #58aedc, #5983ca, #04034e);margin-right: 40px; width: 700px; margin-bottom: 20px; " class="contact-form-container">
+        <h3 class="mb-4">Send a Message</h3>
+        <form >
+        
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Subject" required>
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer>
+  <div style="background-color: #5D3A9B; color: white;" class="py-4">
+    <div class="container">
+      <div class="row align-items-center text-center text-md-start">
+     
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h4 class="text-gradient">Kavindya Sathsarani</h4>
+          <p>Software Engineering Undergraduate</p>
+        </div>
+
+        <div class="col-md-6">
+ <div class="text-center text-md-end mb-2">
+    <h5 class="fw-bold">Connect with me</h5>
+  </div><br>
+          <div class="d-flex justify-content-center justify-content-md-end gap-3">
+                      
+            <a href="https://www.facebook.com/kavindya.sathsarani.260890" target="_blank" class="text-white">
+              <i class="fab fa-facebook-f fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="text-white">
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/kavindya3286"class="text-white">
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col text-center">
+          <p>&copy; 2025 All Rights Reserved. Designed by <span class="text-gradient">Kavindya Sathsarani</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
